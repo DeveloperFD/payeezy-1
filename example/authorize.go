@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/giorgisio/payeezy_golang/payeezy"
+	"github.com/giorgisio/payeezy/payeezy"
 	"log"
 )
 

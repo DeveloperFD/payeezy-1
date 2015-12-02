@@ -2,7 +2,7 @@ package main
 
 import (
 	"encoding/json"
-	"github.com/giorgisio/payeezy_golang/payeezy"
+	"github.com/giorgisio/payeezy/payeezy"
 	"log"
 )
 
