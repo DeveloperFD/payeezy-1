@@ -1,7 +1,7 @@
 package payeezy
 
 /*
-	Response on authorize requests
+	Response from authorize requests
 */
 type Response struct {
 	CorrelationID     string `json:"correlation_id"`

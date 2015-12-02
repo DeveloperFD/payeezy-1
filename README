@@ -1,18 +1,23 @@
-# Payeezy Golang Library
+#Payeezy Golang Library
 
 First Data Payeezy integration 
 
+##Transaction Details
 
-# Goal: Implement the core features of the Payeezy Direct API
+https://developer.payeezy.com/creditcardpayment/apis/post/transactions
+
+##Other languages API
 
 https://github.com/payeezy/payeezy_direct_API
 
+##Contribute
 
-# Contribute
+Please fork and pull request.
 
-Fork and pull request.
+##Examples
 
+See example directory
 
-#License
+##License
 
 The Golang implementation of Payeezy is open source and available under the MIT license.

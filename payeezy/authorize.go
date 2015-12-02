@@ -1,5 +1,8 @@
 package payeezy
 
+/*
+	Authorize request data
+*/
 type Authorize struct {
 	Amount         string `json:"amount"`
 	BillingAddress struct {

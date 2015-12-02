@@ -1,10 +1,10 @@
 package payeezy
 
 type Header struct {
-	Url           string
-	APIKey        string
-	Token         string
-	Authorization string
-	Nonce         string
-	Timestamp     string
+	Url           string `json:"url"`
+	APIKey        string `json:"apikey"`
+	Token         string `json:"token"`
+	Authorization string `json:"authorization"`
+	Nonce         string `json:"nonce"`
+	Timestamp     string `json:"timestamp"`
 }
