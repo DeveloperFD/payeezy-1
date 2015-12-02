@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/giorgisio/payeezy_golang/payeezy"
+	"log"
 )
 
 func main() {
@@ -20,14 +21,29 @@ func main() {
 	authorize.Method = "credit_card"
 	authorize.Amount = "1299"
 	authorize.CurrencyCode = "USD"
-	authorize.CreditCard.CardType = "visa"
-	authorize.CreditCard.CardHolderName = "John Smith"
+	authorize.CreditCard.Type = "visa"
+	authorize.CreditCard.CardholderName = "John Smith"
 	authorize.CreditCard.CardNumber = "4788250000028291"
-	authorize.CreditCard.CardExpiry = "1030"
-	authorize.CreditCard.CardCvv = "123"
+	authorize.CreditCard.ExpDate = "1030"
+	authorize.CreditCard.Cvv = "123"
 
 	payload := payeezy.AuthorizePayload(authorize)
 
-	header.PostTransaction(payload)
+	response, err := header.PostTransaction(payload)
+	if err != nil {
+		log.Println(err)
+	}
+
+	log.Println(response)
+
+	log.Println("TransactionStatus:", response.TransactionStatus)
+	log.Println("ValidationStatus:", response.ValidationStatus)
+
+	errs := len(response.Error.Messages)
+
+	for i := 0; i < errs; i++ {
+		log.Println("Code:", response.Error.Messages[i].Code)
+		log.Println("Description:", response.Error.Messages[i].Description)
+	}
 
 }
