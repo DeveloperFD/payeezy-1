@@ -2,7 +2,6 @@
 
 No longer maintained. You're probably going to run into "code":"403", "message":"HMAC validation Failure" (FirstData/Payeezy support wasn't much help with the issue). If I find a solution, I will update
 
-
 ```
 	// Test URL
 	url := "https://api-cert.payeezy.com/v1/transactions"
@@ -19,7 +18,7 @@ No longer maintained. You're probably going to run into "code":"403", "message":
 	//nonce = generate a random alphanumeric value
 	nonce = "6770831660134717000"
 
-	//timestamp = UTC, EPOCH, Millseconds
+	//timestamp = UTC, EPOCH, Millseconds, within 5 minutes of firstdata server time
 	//Example code (Format = 1423683480051)
 	t := time.Now().UTC()
 	timestamp := strconv.Itoa(int(t.UnixNano() / int64(time.Millisecond)))
@@ -27,7 +26,6 @@ No longer maintained. You're probably going to run into "code":"403", "message":
 	//Token = Available on your payeezy account
 	token = "fdoa-a480ce8951daa73262734cf102641994c1e55e7cdf4c02b6"
 
-	// Available on your payeezy account
 	// Payload
 	payload := `{
 		"merchant_ref": "Astonishing-Sale",
@@ -52,12 +50,18 @@ No longer maintained. You're probably going to run into "code":"403", "message":
 	h.Write([]byte(concatedMessage))
 
 	authorization := base64.StdEncoding.EncodeToString(h.Sum(nil))
+```
 
+Use the above values to post to test URL
+
+```
 	// "github.com/giorgisio/payeezy/payeezy"
 	header := new(payeezy.Header)
 
 	//Set the following
-	//header.APIKey, header.Nonce, header.Timestamp, header.Token, header.Authorization
+	//header.Url, header.APIKey, header.Nonce, header.Timestamp, header.Token, header.Authorization
+
+	// POST
 	response, err := header.PostTransaction(payload)
 
 ```
