@@ -1,6 +1,8 @@
-#Payeezy Golang Library
+## Payeezy Golang Library
 
-No longer maintained. You're probably going to run into "code":"403", "message":"HMAC validation Failure" (FirstData/Payeezy support wasn't much help with the issue). If I find a solution, I will update
+No longer maintained (January 2016).
+
+You're probably going to run into "code":"403", "message":"HMAC validation Failure" (FirstData/Payeezy support wasn't much help with the issue).
 
 ```
 	// Test URL
