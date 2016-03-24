@@ -2,6 +2,8 @@
 
 No longer maintained (January 2016).
 
+UPDATE (March 24, 2016) -- Refer: payeezy2/payeezy.go - use if you have to. (Very much don't recommend FirstData/Payeezy)
+
 You're probably going to run into "code":"403", "message":"HMAC validation Failure" (FirstData/Payeezy support wasn't much help with the issue).
 
 ```
